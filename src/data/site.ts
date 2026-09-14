@@ -6,9 +6,9 @@ export const navLinks = [
   { label: "Contact Us", to: "/contact" },
 ] as const;
 
-export const helpPhone = "+996 247-1680";
-export const contactPhone = "+537 547-6401";
-export const contactEmail = "nwiger@yahoo.com";
+export const helpPhone = "+255676855433";
+export const contactPhone = "+2556768554331";
+export const contactEmail = "nuh.saidi.buhero@gmail.com";
 export const contactAddress = "Oxford Ave. Cary, NC 27511";
 export const openingHours = "Sun-Mon: 10am - 10pm";
 
