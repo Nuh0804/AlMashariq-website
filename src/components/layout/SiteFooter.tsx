@@ -7,8 +7,6 @@ import facebook from "@/assets/icons/social-facebook.svg";
 import instagram from "@/assets/icons/social-instagram.svg";
 import socialX from "@/assets/icons/social-x.svg";
 import youtube from "@/assets/icons/social-youtube.svg";
-import appStore from "@/assets/icons/app-store-footer.svg";
-import googlePlay from "@/assets/icons/google-play-footer.svg";
 import {
   contactAddress,
   contactEmail,
