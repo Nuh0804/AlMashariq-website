@@ -1,6 +1,6 @@
-# Car Rental
+# AlMashariq
 
-A car rental marketing site implemented from the [Car Rental Figma Template](https://www.figma.com/design/ooEqbzd2YHaA4bSxYyL4xi/Car-Rental-Figma-Template--Community-?node-id=1-6419) 1920 desktop frames. The UI follows the template layout, type, and color (purple `#5937e0`, orange `#ff9e0c`, Work Sans + Inter) and stacks to a mobile layout below the desktop breakpoint.
+A AlMashariq marketing site implemented from the [AlMashariq Figma Template](https://www.figma.com/design/ooEqbzd2YHaA4bSxYyL4xi/Car-Rental-Figma-Template--Community-?node-id=1-6419) 1920 desktop frames. The UI follows the template layout, type, and color (purple `#5937e0`, orange `#ff9e0c`, Work Sans + Inter) and stacks to a mobile layout below the desktop breakpoint.
 
 ## Project overview
 

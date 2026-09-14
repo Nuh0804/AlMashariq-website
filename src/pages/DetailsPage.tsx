@@ -94,7 +94,7 @@ export function DetailsPage() {
             {specs.map((spec) => (
               <div
                 key={spec.label}
-                className="flex h-[148px] flex-col justify-center gap-5 rounded-xl bg-[#fafafa] p-6"
+                className="flex h-[148px] flex-col justify-center gap-5 rounded-xl bg-white p-6"
               >
                 {spec.icon}
                 <div>

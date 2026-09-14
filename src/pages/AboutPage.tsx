@@ -1,7 +1,4 @@
 import { Check, ChevronDown } from "lucide-react";
-import appStore from "@/assets/icons/app-store.svg";
-import googlePlay from "@/assets/icons/google-play.svg";
-import iphoneFrame from "@/assets/images/iphone-frame.png";
 import whyChoose from "@/assets/images/why-choose.jpg";
 import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
@@ -65,11 +62,11 @@ const faqs = [
     a: "A valid driver’s license, proof of identity, and a payment method on file are required at pickup.",
   },
   {
-    q: "Does Car Rental allow me to tow with or attach a hitch to the rental vehicle?",
+    q: "Does AlMashariq allow me to tow with or attach a hitch to the rental vehicle?",
     a: "Towing and hitch attachments are not permitted unless explicitly listed in your rental agreement.",
   },
   {
-    q: "Does Car Rental offer coverage products for purchase with my rental?",
+    q: "Does AlMashariq offer coverage products for purchase with my rental?",
     a: "Optional coverage products can be added during booking or at the counter before you drive away.",
   },
 ];
@@ -162,51 +159,6 @@ export function AboutPage() {
       </section>
 
       <section className="page-wrap py-[60px]">
-        <div className="relative overflow-hidden rounded-[20px] bg-brand px-6 py-12 text-white sm:px-14 sm:py-16">
-          <div className="grid items-center gap-10 lg:grid-cols-[267px_1fr]">
-            <img
-              src={iphoneFrame}
-              alt="Car Rental mobile app"
-              className="mx-auto h-[420px] w-auto lg:h-[512px]"
-            />
-            <div className="max-w-[600px]">
-              <p className="text-base font-semibold">Download our app</p>
-              <h2 className="mt-2 text-[36px] font-bold leading-none sm:text-[50px]">
-                Download our app
-              </h2>
-              <p className="mt-6 text-base leading-6 text-white/80">
-                Turpis morbi enim nisi pulvinar leo dui tellus. Faucibus egestas
-                semper diam rutrum dictumst ut donec. Nisi nisi morbi vel in
-                vulputate. Nulla nam eget urna fusce vulputate at risus
-              </p>
-              <div className="mt-10 flex flex-wrap gap-6">
-                <a
-                  href="https://www.apple.com/app-store/"
-                  aria-label="Download on the App Store"
-                >
-                  <img
-                    src={appStore}
-                    alt="Download on the App Store"
-                    className="h-[50px] w-[171px]"
-                  />
-                </a>
-                <a
-                  href="https://play.google.com/store"
-                  aria-label="Get it on Google Play"
-                >
-                  <img
-                    src={googlePlay}
-                    alt="Get it on Google Play"
-                    className="h-[50px] w-[171px]"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="page-wrap py-[60px]">
         <h2 className="text-center text-[36px] font-bold sm:text-[50px]">
           Reviews from our customers
         </h2>
@@ -214,7 +166,7 @@ export function AboutPage() {
           {reviews.map((review, index) => (
             <article
               key={`${review.name}-${String(index)}`}
-              className="overflow-hidden rounded-[20px] bg-[#fafafa]"
+              className="overflow-hidden rounded-[20px] bg-white"
             >
               <div className="relative px-9 pt-16 pb-20">
                 <p className="font-serif text-6xl leading-none text-brand">“</p>
@@ -238,13 +190,13 @@ export function AboutPage() {
 
       <section className="page-wrap py-[60px]">
         <h2 className="text-center text-[36px] font-bold sm:text-[50px]">
-          Top Car Rental Questions
+          Top AlMashariq Questions
         </h2>
         <div className="mt-16 space-y-6">
           {faqs.map((faq, index) => (
             <details
               key={faq.q}
-              className="rounded-[20px] border border-[#ececec] px-6 py-8 sm:px-10"
+              className="rounded-[20px] border border-[#ececec] bg-white px-6 py-8 sm:px-10"
               open={index === 0}
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-xl font-semibold [&::-webkit-details-marker]:hidden">

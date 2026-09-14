@@ -1,6 +1,4 @@
 import { CarCatalog } from "@/components/home/CarCatalog";
-import { DownloadApp } from "@/components/home/DownloadApp";
-import { EnjoyMile } from "@/components/home/EnjoyMile";
 import { FactsBanner } from "@/components/home/FactsBanner";
 import { FeatureStats } from "@/components/home/FeatureStats";
 import { HeroSection } from "@/components/home/HeroSection";
@@ -12,10 +10,8 @@ export function HomePage() {
       <HeroSection />
       <FeatureStats />
       <WhyChoose />
-      <CarCatalog />
+      <CarCatalog cardClassName="bg-background" />
       <FactsBanner />
-      <DownloadApp />
-      <EnjoyMile />
     </>
   );
 }

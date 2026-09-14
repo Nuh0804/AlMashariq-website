@@ -6,9 +6,11 @@ import { featuredCars } from "@/data/cars";
 export function CarCatalog({
   heading = "Choose the car that suits you",
   showViewAll = true,
+  cardClassName,
 }: {
   heading?: string;
   showViewAll?: boolean;
+  cardClassName?: string;
 }) {
   return (
     <section className="page-wrap flex flex-col gap-10 py-[60px]">
@@ -34,7 +36,7 @@ export function CarCatalog({
       </div>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {featuredCars.map((car) => (
-          <CarCard key={car.id} car={car} />
+          <CarCard key={car.id} car={car} className={cardClassName} />
         ))}
       </div>
     </section>

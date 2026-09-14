@@ -45,7 +45,7 @@ export function VehiclesPage() {
                   "flex h-[50px] min-w-[140px] items-center justify-center gap-2 rounded-xl px-5 text-base font-semibold",
                   active === tab.label
                     ? "bg-brand text-white"
-                    : "bg-[#f5f5f5] text-black hover:bg-[#ececec]",
+                    : "bg-white text-black hover:bg-white/80",
                 )}
               >
                 {Icon ? <Icon className="size-7" strokeWidth={1.5} /> : null}

@@ -1,5 +1,5 @@
 import { Car, Users, CalendarDays, Gauge } from "lucide-react";
-import logoCar from "@/assets/icons/logo-car.svg";
+import logoCar from "@/assets/icons/AlMashariq-logo.svg";
 
 const facts = [
   { value: "540+", label: "Cars", icon: Car },

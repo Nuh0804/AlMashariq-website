@@ -20,17 +20,17 @@ const contacts = [
 const posts = [
   {
     title: "How To Choose The Right Car",
-    meta: "News / 12April 2024",
+    meta: "News / 12April 2026",
     image: contactHero,
   },
   {
     title: "Which plan is right for me?",
-    meta: "News / 12April 2024",
+    meta: "News / 12April 2026",
     image: contactHero,
   },
   {
     title: "Enjoy Speed, Choice & Total Control",
-    meta: "News / 12April 2024",
+    meta: "News / 12April 2026",
     image: contactHero,
   },
 ];

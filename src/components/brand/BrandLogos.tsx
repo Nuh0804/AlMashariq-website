@@ -17,7 +17,7 @@ const logos = [
 export function BrandLogos() {
   return (
     <section className="page-wrap py-[60px]">
-      <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 rounded-[40px] bg-[#fafafa] px-6 py-10 sm:justify-between sm:px-10 sm:py-[60px]">
+      <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 rounded-[40px] bg-white px-6 py-10 sm:justify-between sm:px-10 sm:py-[60px]">
         {logos.map((logo) => (
           <img
             key={logo.alt}

@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 
 export function PageShell() {
   return (
-    <div className="flex min-h-svh flex-col bg-white">
+    <div className="flex min-h-svh flex-col bg-background">
       <SiteHeader />
       <main className="flex-1">
         <Outlet />

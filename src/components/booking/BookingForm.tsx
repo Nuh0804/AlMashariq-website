@@ -22,7 +22,7 @@ export function BookingForm({
   const isBrand = variant === "brand";
 
   const fieldClass = isBrand
-    ? "h-[38px] w-full rounded-xl border-0 bg-[#694be3] px-4 text-base font-normal text-white shadow-none data-placeholder:text-white [&_svg]:text-white"
+    ? "h-[38px] w-full rounded-xl border-0 bg-brand-field px-4 text-base font-normal text-white shadow-none placeholder:text-white data-placeholder:text-white [&_svg]:text-white"
     : "h-[38px] w-full rounded-xl border-0 bg-[#fafafa] px-4 text-base font-normal text-black shadow-none placeholder:text-black/50 data-placeholder:text-black/50";
 
   return (

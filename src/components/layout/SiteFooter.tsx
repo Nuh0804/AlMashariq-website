@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import logoCar from "@/assets/icons/logo-car.svg";
+import logoCar from "@/assets/icons/AlMashariq-logo.svg";
 import mapPin from "@/assets/icons/map-pin.svg";
 import mail from "@/assets/icons/mail.svg";
 import phoneCircle from "@/assets/icons/phone-circle.svg";
@@ -39,7 +39,7 @@ export function SiteFooter() {
               className="size-12"
             />
             <span className="font-inter text-base font-bold text-black">
-              Car Rental
+              AlMashariq
             </span>
           </Link>
 
@@ -135,36 +135,10 @@ export function SiteFooter() {
               ))}
             </div>
           </div>
-
-          <div className="flex flex-col gap-6">
-            <p className="text-xl font-semibold">Download App</p>
-            <div className="flex flex-col gap-6">
-              <a
-                href="https://www.apple.com/app-store/"
-                aria-label="Download on the App Store"
-              >
-                <img
-                  src={appStore}
-                  alt="Download on the App Store"
-                  className="h-[50px] w-[171px]"
-                />
-              </a>
-              <a
-                href="https://play.google.com/store"
-                aria-label="Get it on Google Play"
-              >
-                <img
-                  src={googlePlay}
-                  alt="Get it on Google Play"
-                  className="h-[50px] w-[171px]"
-                />
-              </a>
-            </div>
-          </div>
         </div>
 
         <p className="text-center font-inter text-sm text-black/50">
-          © Copyright Car Rental 2024. Design by Figma. guru
+          © Copyright AlMashariq 2026. Design by https://nuhsaidi.com/
         </p>
       </div>
     </footer>

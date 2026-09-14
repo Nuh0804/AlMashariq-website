@@ -4,6 +4,7 @@ import gearIcon from "@/assets/icons/gear.svg";
 import fuelIcon from "@/assets/icons/fuel.svg";
 import { Snowflake } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function CarImage({ src, alt }: { src: string; alt: string }) {
   return (
@@ -17,9 +18,20 @@ export function CarImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-export function CarCard({ car }: { car: Car }) {
+export function CarCard({
+  car,
+  className,
+}: {
+  car: Car;
+  className?: string;
+}) {
   return (
-    <article className="flex w-full flex-col gap-10 rounded-[20px] bg-[#fafafa] p-6">
+    <article
+      className={cn(
+        "flex w-full flex-col gap-10 rounded-[20px] bg-[#fafafa] p-6",
+        className,
+      )}
+    >
       <div className="flex flex-col gap-5">
         <CarImage src={car.image} alt={`${car.name} ${car.type}`} />
         <div className="flex flex-col gap-10">

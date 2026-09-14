@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router";
 import { Menu } from "lucide-react";
-import logoCar from "@/assets/icons/logo-car.svg";
+import logoCar from "@/assets/icons/AlMashariq-logo.svg";
 import phoneIcon from "@/assets/icons/phone.svg";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +18,7 @@ function Logo() {
     <NavLink to="/" className="flex w-[180px] shrink-0 items-center gap-3">
       <img src={logoCar} alt="" width={48} height={48} className="size-12" />
       <span className="font-inter text-base font-bold text-black">
-        Car Rental
+        AlMashariq
       </span>
     </NavLink>
   );
@@ -47,7 +47,7 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-white">
+    <header className="sticky top-0 z-40 bg-background">
       <div className="page-wrap flex h-[72px] items-center justify-between gap-4 lg:h-[104px]">
         <Logo />
 
@@ -84,7 +84,7 @@ export function SiteHeader() {
           <SheetContent side="right" className="w-[min(100%,320px)] p-6">
             <SheetHeader className="p-0">
               <SheetTitle className="font-inter text-left text-base font-bold">
-                Car Rental
+                AlMashariq
               </SheetTitle>
             </SheetHeader>
             <nav className="mt-6 flex flex-col gap-4" aria-label="Mobile">
