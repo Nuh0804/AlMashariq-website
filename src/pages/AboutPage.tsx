@@ -1,8 +1,8 @@
 import { Check, ChevronDown } from "lucide-react";
 import whyChoose from "@/assets/images/why-choose.jpg";
+import { BookingForm } from "@/components/booking/BookingForm";
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
-import { Button } from "@/components/ui/button";
 import { contactPhone } from "@/data/site";
 
 const highlights = [
@@ -226,29 +226,24 @@ export function AboutPage() {
 
       <Reveal>
         <section className="page-wrap pb-16 lg:pb-24">
-        <div className="relative overflow-hidden rounded-2xl bg-brand px-8 py-16 text-white sm:px-20">
-          <img
-            src={whyChoose}
-            alt=""
-            className="pointer-events-none absolute right-0 bottom-0 hidden h-full w-[45%] object-cover opacity-40 lg:block"
-          />
-          <div className="relative max-w-[586px]">
-            <h2 className="text-[36px] font-bold leading-none sm:text-[46px]">
-              Looking for a car?
-            </h2>
-            <p className="mt-4 text-[32px] font-semibold">{contactPhone}</p>
-            <p className="mt-6 max-w-[464px] text-base text-white/80">
-              Aliquam adipiscing velit semper morbi. Purus non eu cursus
-              porttitor tristique et gravida.
-            </p>
-            <Button
-              asChild
-              className="mt-10 h-10 rounded-xl bg-brand-orange px-7 font-inter text-base font-semibold text-white hover:bg-brand-orange/90"
-            >
-              <a href={`tel:${contactPhone.replaceAll(" ", "")}`}>Book now</a>
-            </Button>
+          <div className="relative isolate overflow-hidden rounded-[40px] bg-brand text-white">
+            <img
+              src={whyChoose}
+              alt=""
+              className="pointer-events-none absolute inset-0 size-full object-cover opacity-30"
+            />
+            <div className="relative z-10 grid items-center gap-10 px-6 py-12 sm:px-10 lg:grid-cols-[1fr_416px] lg:px-[72px] lg:py-[78px]">
+              <div className="max-w-[586px]">
+                <h2 className="text-section text-white">Looking for a car?</h2>
+                <p className="mt-4 text-[32px] font-semibold">{contactPhone}</p>
+                <p className="mt-6 max-w-[464px] text-base text-white/80">
+                  Aliquam adipiscing velit semper morbi. Purus non eu cursus
+                  porttitor tristique et gravida.
+                </p>
+              </div>
+              <BookingForm className="w-full lg:h-[503px]" />
+            </div>
           </div>
-        </div>
         </section>
       </Reveal>
     </>

@@ -13,23 +13,17 @@ import { cn } from "@/lib/utils";
 export function BookingForm({
   className,
   title = "Book your car",
-  variant = "light",
 }: {
   className?: string;
   title?: string;
-  variant?: "light" | "brand";
 }) {
-  const isBrand = variant === "brand";
-
-  const fieldClass = isBrand
-    ? "booking-field h-[38px] w-full rounded-xl border border-white/15 bg-brand-field px-4 text-base font-normal text-white shadow-none placeholder:text-white data-placeholder:text-white focus-visible:ring-0 [&_svg]:text-white"
-    : "booking-field h-[38px] w-full rounded-xl border border-white/20 bg-white/75 px-4 text-base font-normal text-foreground shadow-none placeholder:text-foreground/50 data-placeholder:text-foreground/50 focus-visible:ring-0 dark:bg-white/10";
+  const fieldClass =
+    "booking-field h-[38px] w-full rounded-xl border border-white/20 bg-white/75 px-4 text-base font-normal text-foreground shadow-none placeholder:text-foreground/50 data-placeholder:text-foreground/50 focus-visible:ring-0 dark:bg-white/10";
 
   return (
     <form
       className={cn(
-        "flex w-full max-w-[416px] flex-col items-center gap-10 rounded-[20px] p-10",
-        isBrand ? "bg-brand shadow-[0_24px_60px_rgb(0_0_0/28%)]" : "glass-card",
+        "glass-card flex w-full max-w-[416px] flex-col items-center gap-10 rounded-[20px] p-10",
         className,
       )}
       onSubmit={(event) => event.preventDefault()}
@@ -88,11 +82,7 @@ export function BookingForm({
           onBlur={(event) => {
             if (!event.currentTarget.value) event.currentTarget.type = "text";
           }}
-          className={cn(
-            fieldClass,
-            isBrand &&
-              "[color-scheme:dark] placeholder:text-white [&::-webkit-calendar-picker-indicator]:invert",
-          )}
+          className={fieldClass}
         />
         <Input
           type="text"
@@ -105,11 +95,7 @@ export function BookingForm({
           onBlur={(event) => {
             if (!event.currentTarget.value) event.currentTarget.type = "text";
           }}
-          className={cn(
-            fieldClass,
-            isBrand &&
-              "[color-scheme:dark] placeholder:text-white [&::-webkit-calendar-picker-indicator]:invert",
-          )}
+          className={fieldClass}
         />
       </div>
       <Button

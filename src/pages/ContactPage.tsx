@@ -40,17 +40,26 @@ export function ContactPage() {
   return (
     <>
       <PageHero title="Contact Us" crumbs="Home / Contact Us" />
-      <section className="page-wrap grid items-start justify-center gap-8 py-16 lg:grid-cols-[416px_1fr] lg:py-24">
-        <Reveal>
-          <BookingForm variant="brand" />
-        </Reveal>
-        <Reveal delay={80}>
+      <section className="page-wrap py-16 lg:py-24">
+        <div className="relative isolate overflow-hidden rounded-[40px] bg-brand">
           <img
             src={contactHero}
             alt=""
-            className="h-[320px] w-full rounded-2xl object-cover sm:h-[503px]"
+            className="pointer-events-none absolute inset-0 size-full object-cover opacity-35"
           />
-        </Reveal>
+          <div className="relative z-10 grid items-start gap-8 px-6 py-12 sm:px-10 lg:grid-cols-[416px_1fr] lg:px-[72px] lg:py-[78px]">
+            <Reveal>
+              <BookingForm className="w-full lg:h-[503px]" />
+            </Reveal>
+            <Reveal delay={80}>
+              <img
+                src={contactHero}
+                alt=""
+                className="h-[320px] w-full rounded-2xl object-cover sm:h-[503px]"
+              />
+            </Reveal>
+          </div>
+        </div>
       </section>
 
       <section className="page-wrap grid gap-8 py-10 sm:grid-cols-2 xl:grid-cols-4">

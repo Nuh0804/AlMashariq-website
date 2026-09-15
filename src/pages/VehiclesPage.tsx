@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router";
 import { Car, CarFront, Truck, Bus, Zap, Crown } from "lucide-react";
 import { BrandLogos } from "@/components/brand/BrandLogos";
 import { CarCard } from "@/components/cars/CarCard";
+import { PageHero } from "@/components/layout/PageHero";
 import { FilterPills } from "@/components/motion/FilterPills";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/button";
@@ -56,10 +57,10 @@ export function VehiclesPage() {
 
   return (
     <>
+      <PageHero title="Select a vehicle group" crumbs="Home / Vehicles" />
       <section className="page-wrap py-16 lg:py-24">
         <Reveal>
-          <div className="flex flex-col items-center gap-6">
-            <h1 className="text-display text-center">Select a vehicle group</h1>
+          <div className="flex justify-center">
             <Button
               type="button"
               className="h-10 rounded-xl bg-brand-orange px-7 font-inter text-base font-semibold text-white hover:bg-brand-orange/90"
