@@ -10,7 +10,7 @@ export function HomePage() {
       <HeroSection />
       <FeatureStats />
       <WhyChoose />
-      <CarCatalog cardClassName="bg-background" />
+      <CarCatalog />
       <FactsBanner />
     </>
   );

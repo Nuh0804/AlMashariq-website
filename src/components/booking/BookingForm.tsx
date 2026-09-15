@@ -13,33 +13,22 @@ import { cn } from "@/lib/utils";
 export function BookingForm({
   className,
   title = "Book your car",
-  variant = "light",
 }: {
   className?: string;
   title?: string;
-  variant?: "light" | "brand";
 }) {
-  const isBrand = variant === "brand";
-
-  const fieldClass = isBrand
-    ? "h-[38px] w-full rounded-xl border-0 bg-brand-field px-4 text-base font-normal text-white shadow-none placeholder:text-white data-placeholder:text-white [&_svg]:text-white"
-    : "h-[38px] w-full rounded-xl border-0 bg-[#fafafa] px-4 text-base font-normal text-black shadow-none placeholder:text-black/50 data-placeholder:text-black/50";
+  const fieldClass =
+    "booking-field h-[38px] w-full rounded-xl border border-white/20 bg-white/75 px-4 text-base font-normal text-foreground shadow-none placeholder:text-foreground/50 data-placeholder:text-foreground/50 focus-visible:ring-0 dark:bg-white/10";
 
   return (
     <form
       className={cn(
-        "flex w-full max-w-[416px] flex-col items-center gap-10 rounded-[20px] p-10",
-        isBrand ? "bg-brand" : "bg-white",
+        "glass-card flex w-full max-w-[416px] flex-col items-center gap-10 rounded-[20px] p-10",
         className,
       )}
       onSubmit={(event) => event.preventDefault()}
     >
-      <h2
-        className={cn(
-          "text-center text-[24px] font-semibold sm:text-[28px]",
-          isBrand ? "text-white" : "text-black",
-        )}
-      >
+      <h2 className="text-center font-heading text-[24px] font-bold text-white sm:text-[28px]">
         {title}
       </h2>
       <div className="flex w-full flex-col gap-5">
@@ -93,11 +82,7 @@ export function BookingForm({
           onBlur={(event) => {
             if (!event.currentTarget.value) event.currentTarget.type = "text";
           }}
-          className={cn(
-            fieldClass,
-            isBrand &&
-              "[color-scheme:dark] placeholder:text-white [&::-webkit-calendar-picker-indicator]:invert",
-          )}
+          className={fieldClass}
         />
         <Input
           type="text"
@@ -110,11 +95,7 @@ export function BookingForm({
           onBlur={(event) => {
             if (!event.currentTarget.value) event.currentTarget.type = "text";
           }}
-          className={cn(
-            fieldClass,
-            isBrand &&
-              "[color-scheme:dark] placeholder:text-white [&::-webkit-calendar-picker-indicator]:invert",
-          )}
+          className={fieldClass}
         />
       </div>
       <Button

@@ -1,4 +1,5 @@
 import whyChoose from "@/assets/images/why-choose.jpg";
+import { Reveal } from "@/components/motion/Reveal";
 
 const steps = [
   {
@@ -25,23 +26,27 @@ const steps = [
 
 export function WhyChoose() {
   return (
-    <section className="page-wrap grid items-center gap-10 py-[60px] lg:grid-cols-2 lg:gap-[110px]">
-      <img
-        src={whyChoose}
-        alt=""
-        className="h-[320px] w-full rounded-[20px] object-cover sm:h-[420px] lg:h-[549px]"
-      />
-      <div className="flex flex-col gap-7">
-        {steps.map((step) => (
-          <div key={step.n} className="flex flex-col gap-5">
-            <div className="flex items-end gap-4">
-              <span className="flex size-8 items-center justify-center rounded-full bg-brand text-base font-semibold text-white">
-                {step.n}
-              </span>
-              <h3 className="text-xl font-semibold">{step.title}</h3>
+    <section className="page-wrap grid items-center gap-10 py-16 lg:grid-cols-2 lg:gap-[110px] lg:py-24">
+      <Reveal>
+        <img
+          src={whyChoose}
+          alt=""
+          className="h-[320px] w-full rounded-2xl object-cover sm:h-[420px] lg:h-[549px]"
+        />
+      </Reveal>
+      <div className="flex flex-col gap-8">
+        {steps.map((step, index) => (
+          <Reveal key={step.n} delay={index * 70}>
+            <div className="flex flex-col gap-5">
+              <div className="flex items-end gap-4">
+                <span className="flex size-8 items-center justify-center rounded-full bg-brand text-base font-semibold text-white">
+                  {step.n}
+                </span>
+                <h3 className="font-heading text-xl font-bold">{step.title}</h3>
+              </div>
+              <p className="text-base text-muted-foreground">{step.body}</p>
             </div>
-            <p className="text-base text-black/60">{step.body}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

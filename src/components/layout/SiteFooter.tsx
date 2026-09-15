@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import logoCar from "@/assets/icons/AlMashariq-logo.svg";
 import mapPin from "@/assets/icons/map-pin.svg";
+import { BrandMark } from "@/components/brand/BrandMark";
 import mail from "@/assets/icons/mail.svg";
 import phoneCircle from "@/assets/icons/phone-circle.svg";
 import facebook from "@/assets/icons/social-facebook.svg";
@@ -25,18 +25,12 @@ const socials = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-white pb-10 pt-[60px]">
+    <footer className="border-t border-border bg-card pb-10 pt-16">
       <div className="page-wrap flex flex-col gap-[60px]">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-4 xl:items-center xl:justify-between">
           <Link to="/" className="flex w-[180px] items-center gap-3">
-            <img
-              src={logoCar}
-              alt=""
-              width={48}
-              height={48}
-              className="size-12"
-            />
-            <span className="font-inter text-base font-bold text-black">
+            <BrandMark className="size-12" />
+            <span className="font-inter text-base font-bold text-foreground">
               AlMashariq
             </span>
           </Link>
@@ -135,7 +129,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="text-center font-inter text-sm text-black/50">
+        <p className="text-center font-inter text-sm text-muted-foreground">
           © Copyright AlMashariq 2026. Design by https://nuhsaidi.com/
         </p>
       </div>

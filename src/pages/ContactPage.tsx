@@ -3,6 +3,7 @@ import contactHero from "@/assets/images/contact-hero.png";
 import { BrandLogos } from "@/components/brand/BrandLogos";
 import { BookingForm } from "@/components/booking/BookingForm";
 import { PageHero } from "@/components/layout/PageHero";
+import { Reveal } from "@/components/motion/Reveal";
 import {
   contactAddress,
   contactEmail,
@@ -39,44 +40,67 @@ export function ContactPage() {
   return (
     <>
       <PageHero title="Contact Us" crumbs="Home / Contact Us" />
-      <section className="page-wrap grid items-start justify-center gap-6 py-[60px] lg:grid-cols-[416px_1fr]">
-        <BookingForm variant="brand" />
-        <img
-          src={contactHero}
-          alt=""
-          className="h-[320px] w-full rounded-[20px] object-cover sm:h-[503px]"
-        />
+      <section className="page-wrap py-16 lg:py-24">
+        <div className="relative isolate overflow-hidden rounded-[40px] bg-brand">
+          <img
+            src={contactHero}
+            alt=""
+            className="pointer-events-none absolute inset-0 size-full object-cover opacity-35"
+          />
+          <div className="relative z-10 grid items-start gap-8 px-6 py-12 sm:px-10 lg:grid-cols-[416px_1fr] lg:px-[72px] lg:py-[78px]">
+            <Reveal>
+              <BookingForm className="w-full lg:h-[503px]" />
+            </Reveal>
+            <Reveal delay={80}>
+              <img
+                src={contactHero}
+                alt=""
+                className="h-[320px] w-full rounded-2xl object-cover sm:h-[503px]"
+              />
+            </Reveal>
+          </div>
+        </div>
       </section>
 
       <section className="page-wrap grid gap-8 py-10 sm:grid-cols-2 xl:grid-cols-4">
-        {contacts.map((item) => (
-          <div key={item.label} className="flex items-center gap-4">
-            <span className="flex size-16 shrink-0 items-center justify-center rounded-full bg-brand-orange text-white">
-              <item.icon className="size-7" />
-            </span>
-            <div>
-              <p className="text-[13px] text-black/60">{item.label}</p>
-              <p className="mt-1 font-semibold">{item.value}</p>
+        {contacts.map((item, index) => (
+          <Reveal key={item.label} delay={index * 60}>
+            <div className="flex items-center gap-4">
+              <span className="flex size-16 shrink-0 items-center justify-center rounded-full bg-brand-orange text-white">
+                <item.icon className="size-7" />
+              </span>
+              <div>
+                <p className="text-[13px] text-muted-foreground">{item.label}</p>
+                <p className="mt-1 font-semibold">{item.value}</p>
+              </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </section>
 
-      <section className="page-wrap py-[60px]">
-        <h2 className="text-center text-[36px] font-bold sm:text-[50px]">
-          Latest blog posts & news
-        </h2>
+      <section className="page-wrap py-16 lg:py-24">
+        <Reveal>
+          <h2 className="text-section text-center">
+            Latest blog posts & news
+          </h2>
+        </Reveal>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {posts.map((post) => (
-            <article key={post.title}>
-              <img
-                src={post.image}
-                alt=""
-                className="h-[240px] w-full rounded-[16px] object-cover"
-              />
-              <h3 className="mt-5 text-xl font-semibold">{post.title}</h3>
-              <p className="mt-4 text-base text-black/60">{post.meta}</p>
-            </article>
+          {posts.map((post, index) => (
+            <Reveal key={post.title} delay={index * 80}>
+              <article>
+                <img
+                  src={post.image}
+                  alt=""
+                  className="h-[240px] w-full rounded-2xl object-cover"
+                />
+                <h3 className="mt-5 font-heading text-xl font-bold">
+                  {post.title}
+                </h3>
+                <p className="mt-4 text-base text-muted-foreground">
+                  {post.meta}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>

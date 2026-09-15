@@ -1,7 +1,8 @@
 import { Check, ChevronDown } from "lucide-react";
 import whyChoose from "@/assets/images/why-choose.jpg";
+import { BookingForm } from "@/components/booking/BookingForm";
 import { PageHero } from "@/components/layout/PageHero";
-import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/motion/Reveal";
 import { contactPhone } from "@/data/site";
 
 const highlights = [
@@ -75,26 +76,29 @@ export function AboutPage() {
   return (
     <>
       <PageHero title="About Us" crumbs="Home / About Us" />
-      <section className="page-wrap grid gap-10 py-[60px] lg:grid-cols-[360px_1fr]">
-        <h2 className="text-[36px] font-bold leading-tight sm:text-[46px]">
-          Where every drive feels extraordinary
-        </h2>
-        <div className="grid gap-8 sm:grid-cols-2">
-          {highlights.map((item) => (
-            <div key={item.title}>
-              <h3 className="text-[24px] font-semibold capitalize">
-                {item.title}
-              </h3>
-              <p className="mt-4 max-w-[382px] text-base text-black/60">
-                {item.body}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Reveal>
+        <section className="page-wrap grid gap-10 py-16 lg:grid-cols-[360px_1fr] lg:py-24">
+          <h2 className="text-section leading-tight">
+            Where every drive feels extraordinary
+          </h2>
+          <div className="grid gap-8 sm:grid-cols-2">
+            {highlights.map((item) => (
+              <div key={item.title}>
+                <h3 className="font-heading text-[24px] font-bold capitalize">
+                  {item.title}
+                </h3>
+                <p className="mt-4 max-w-[382px] text-base text-muted-foreground">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </Reveal>
 
-      <section className="page-wrap pb-[60px]">
-        <div className="relative overflow-hidden rounded-[20px]">
+      <Reveal>
+        <section className="page-wrap pb-16 lg:pb-24">
+          <div className="relative overflow-hidden rounded-2xl">
           <img
             src={whyChoose}
             alt=""
@@ -108,9 +112,11 @@ export function AboutPage() {
             <span className="ml-1 border-y-[10px] border-l-[16px] border-y-transparent border-l-white" />
           </button>
         </div>
-      </section>
+        </section>
+      </Reveal>
 
-      <section className="page-wrap grid gap-10 py-10 text-center sm:grid-cols-3">
+      <Reveal>
+        <section className="page-wrap grid gap-10 py-10 text-center sm:grid-cols-3">
         <div>
           <p className="text-[64px] font-bold leading-none sm:text-[80px]">
             20k+
@@ -129,14 +135,16 @@ export function AboutPage() {
           </p>
           <p className="mt-2 text-xl font-semibold">Years of experince</p>
         </div>
-      </section>
+        </section>
+      </Reveal>
 
-      <section className="page-wrap grid items-center gap-10 py-[60px] lg:grid-cols-2">
+      <Reveal>
+        <section className="page-wrap grid items-center gap-10 py-16 lg:grid-cols-2 lg:py-24">
         <div>
-          <h2 className="max-w-[643px] text-[36px] font-bold leading-tight sm:text-[46px]">
+          <h2 className="text-section max-w-[643px] leading-tight">
             Unlock unforgettable memories on the road
           </h2>
-          <p className="mt-8 max-w-[643px] text-base text-black/60">
+          <p className="mt-8 max-w-[643px] text-base text-muted-foreground">
             Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor
             tristique et gravida. Quis nunc interdum gravida ullamcorper
           </p>
@@ -146,7 +154,7 @@ export function AboutPage() {
                 <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-white">
                   <Check className="size-5" />
                 </span>
-                <p className="text-sm leading-5 text-black/70">{item}</p>
+                <p className="text-sm leading-5 text-muted-foreground">{item}</p>
               </div>
             ))}
           </div>
@@ -154,23 +162,25 @@ export function AboutPage() {
         <img
           src={whyChoose}
           alt=""
-          className="h-[360px] w-full rounded-[20px] object-cover lg:h-[549px]"
+          className="h-[360px] w-full rounded-2xl object-cover lg:h-[549px]"
         />
-      </section>
+        </section>
+      </Reveal>
 
-      <section className="page-wrap py-[60px]">
-        <h2 className="text-center text-[36px] font-bold sm:text-[50px]">
+      <Reveal>
+        <section className="page-wrap py-16 lg:py-24">
+        <h2 className="text-section text-center">
           Reviews from our customers
         </h2>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {reviews.map((review, index) => (
             <article
               key={`${review.name}-${String(index)}`}
-              className="overflow-hidden rounded-[20px] bg-white"
+              className="overflow-hidden rounded-2xl bg-card"
             >
               <div className="relative px-9 pt-16 pb-20">
                 <p className="font-serif text-6xl leading-none text-brand">“</p>
-                <p className="mt-6 text-base leading-7 text-black/70">
+                <p className="mt-6 text-base leading-7 text-muted-foreground">
                   {review.body}
                 </p>
                 <img
@@ -186,56 +196,56 @@ export function AboutPage() {
             </article>
           ))}
         </div>
-      </section>
+        </section>
+      </Reveal>
 
-      <section className="page-wrap py-[60px]">
-        <h2 className="text-center text-[36px] font-bold sm:text-[50px]">
+      <Reveal>
+        <section className="page-wrap py-16 lg:py-24">
+        <h2 className="text-section text-center">
           Top AlMashariq Questions
         </h2>
         <div className="mt-16 space-y-6">
           {faqs.map((faq, index) => (
             <details
               key={faq.q}
-              className="rounded-[20px] border border-[#ececec] bg-white px-6 py-8 sm:px-10"
+              className="rounded-2xl border border-border bg-card px-6 py-8 sm:px-10"
               open={index === 0}
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-xl font-semibold [&::-webkit-details-marker]:hidden">
                 {faq.q}
-                <ChevronDown className="size-6 shrink-0 text-black/50" />
+                <ChevronDown className="size-6 shrink-0 text-muted-foreground" />
               </summary>
-              <p className="mt-6 max-w-[1216px] text-base leading-6 text-black/60">
+              <p className="mt-6 max-w-[1216px] text-base leading-6 text-muted-foreground">
                 {faq.a}
               </p>
             </details>
           ))}
         </div>
-      </section>
+        </section>
+      </Reveal>
 
-      <section className="page-wrap pb-[60px]">
-        <div className="relative overflow-hidden rounded-[20px] bg-brand px-8 py-16 text-white sm:px-20">
-          <img
-            src={whyChoose}
-            alt=""
-            className="pointer-events-none absolute right-0 bottom-0 hidden h-full w-[45%] object-cover opacity-40 lg:block"
-          />
-          <div className="relative max-w-[586px]">
-            <h2 className="text-[36px] font-bold leading-none sm:text-[46px]">
-              Looking for a car?
-            </h2>
-            <p className="mt-4 text-[32px] font-semibold">{contactPhone}</p>
-            <p className="mt-6 max-w-[464px] text-base text-white/80">
-              Aliquam adipiscing velit semper morbi. Purus non eu cursus
-              porttitor tristique et gravida.
-            </p>
-            <Button
-              asChild
-              className="mt-10 h-10 rounded-xl bg-brand-orange px-7 font-inter text-base font-semibold text-white hover:bg-brand-orange/90"
-            >
-              <a href={`tel:${contactPhone.replaceAll(" ", "")}`}>Book now</a>
-            </Button>
+      <Reveal>
+        <section className="page-wrap pb-16 lg:pb-24">
+          <div className="relative isolate overflow-hidden rounded-[40px] bg-brand text-white">
+            <img
+              src={whyChoose}
+              alt=""
+              className="pointer-events-none absolute inset-0 size-full object-cover opacity-30"
+            />
+            <div className="relative z-10 grid items-center gap-10 px-6 py-12 sm:px-10 lg:grid-cols-[1fr_416px] lg:px-[72px] lg:py-[78px]">
+              <div className="max-w-[586px]">
+                <h2 className="text-section text-white">Looking for a car?</h2>
+                <p className="mt-4 text-[32px] font-semibold">{contactPhone}</p>
+                <p className="mt-6 max-w-[464px] text-base text-white/80">
+                  Aliquam adipiscing velit semper morbi. Purus non eu cursus
+                  porttitor tristique et gravida.
+                </p>
+              </div>
+              <BookingForm className="w-full lg:h-[503px]" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
     </>
   );
 }

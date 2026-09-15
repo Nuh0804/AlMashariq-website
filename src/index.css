@@ -1,3 +1,4 @@
+@import "@fontsource-variable/geist";
 @import "@fontsource-variable/work-sans";
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/500.css";
@@ -10,8 +11,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: "Work Sans Variable", "Work Sans", sans-serif;
+  --font-heading: "Work Sans Variable", "Work Sans", sans-serif;
+  --font-sans: "Geist Variable", Geist, sans-serif;
   --font-inter: Inter, sans-serif;
   --color-brand: var(--brand);
   --color-brand-field: var(--brand-field);
@@ -61,21 +62,21 @@
   --brand-field: #3b5d0c;
   --brand-orange: #ff9e0c;
   --background: #ebe7dd;
-  --foreground: #000000;
+  --foreground: #121212;
   --card: #fafafa;
-  --card-foreground: #000000;
+  --card-foreground: #121212;
   --popover: #ffffff;
-  --popover-foreground: #000000;
+  --popover-foreground: #121212;
   --primary: #1f4e38;
   --primary-foreground: #ffffff;
-  --secondary: #fafafa;
-  --secondary-foreground: #000000;
-  --muted: #f5f5f5;
-  --muted-foreground: rgb(0 0 0 / 60%);
+  --secondary: #f4f1ea;
+  --secondary-foreground: #121212;
+  --muted: #e3dfd4;
+  --muted-foreground: rgb(18 18 18 / 62%);
   --accent: #ff9e0c;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #ececec;
+  --border: rgb(18 18 18 / 10%);
   --input: #f5f5f5;
   --ring: #1f4e38;
   --chart-1: #1f4e38;
@@ -83,15 +84,38 @@
   --chart-3: #000000;
   --chart-4: #6b7280;
   --chart-5: #d1d5db;
-  --radius: 0.75rem;
+  --radius: 1rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #000000;
+  --sidebar-foreground: #121212;
   --sidebar-primary: #1f4e38;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f5f5f5;
-  --sidebar-accent-foreground: #000000;
+  --sidebar-accent-foreground: #121212;
   --sidebar-border: #ececec;
   --sidebar-ring: #1f4e38;
+}
+
+.dark {
+  --background: #101613;
+  --foreground: #f3efe6;
+  --card: #18211c;
+  --card-foreground: #f3efe6;
+  --popover: #18211c;
+  --popover-foreground: #f3efe6;
+  --primary: #2f6b4d;
+  --primary-foreground: #ffffff;
+  --secondary: #1e2a24;
+  --secondary-foreground: #f3efe6;
+  --muted: #24332c;
+  --muted-foreground: rgb(243 239 230 / 64%);
+  --border: rgb(243 239 230 / 12%);
+  --input: #24332c;
+  --ring: #7dba98;
+  --sidebar: #18211c;
+  --sidebar-foreground: #f3efe6;
+  --sidebar-accent: #24332c;
+  --sidebar-accent-foreground: #f3efe6;
+  --sidebar-border: rgb(243 239 230 / 12%);
 }
 
 @layer base {
@@ -100,11 +124,18 @@
   }
 
   html {
-    @apply font-sans scroll-smooth;
+    @apply scroll-smooth;
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight;
   }
 
   #root {
@@ -116,15 +147,47 @@
   margin-inline: auto;
   width: 100%;
   max-width: 1296px;
-  padding-inline: 1rem;
+  padding-inline: 1.25rem;
 
   @media (min-width: 640px) {
-    padding-inline: 1.5rem;
+    padding-inline: 1.75rem;
   }
 
   @media (min-width: 1024px) {
     padding-inline: 2rem;
   }
+}
+
+@utility text-display {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 1.15rem + 3.4vw, 3.35rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+@utility text-section {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 1.1rem + 2.2vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+@utility glass-card {
+  border: 1px solid rgb(255 255 255 / 15%);
+  background: rgb(255 255 255 / 18%);
+  box-shadow:
+    0 24px 60px rgb(0 0 0 / 22%),
+    inset 0 1px 0 rgb(255 255 255 / 28%);
+  backdrop-filter: blur(16px);
+}
+
+.dark .glass-card {
+  background: rgb(16 22 19 / 55%);
+  box-shadow:
+    0 24px 60px rgb(0 0 0 / 45%),
+    inset 0 1px 0 rgb(255 255 255 / 8%);
 }
 
 @utility hex-mesh {
@@ -142,4 +205,107 @@
   background-size:
     42px 48px,
     28px 32px;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-car-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes ripple-out {
+  from {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(12);
+  }
+}
+
+.hero-enter {
+  animation: fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter-car {
+  animation: hero-car-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
+}
+
+.cta-motion {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 280ms ease;
+}
+
+.cta-motion:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--brand-orange) 38%, transparent);
+}
+
+.cta-motion:active {
+  transform: scale(0.985);
+}
+
+.cta-motion.is-rippling::after {
+  content: "";
+  position: absolute;
+  left: var(--ripple-x, 50%);
+  top: var(--ripple-y, 50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 45%);
+  pointer-events: none;
+  animation: ripple-out 0.55s ease-out;
+}
+
+.booking-field {
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+}
+
+.booking-field:focus-visible,
+.booking-field[data-state="open"] {
+  border-color: var(--brand-orange);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-orange) 28%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter,
+  .hero-enter-car,
+  .cta-motion.is-rippling::after {
+    animation: none;
+  }
+
+  .cta-motion:hover,
+  .cta-motion:active {
+    transform: none;
+  }
+
+  .hero-enter,
+  .hero-enter-car {
+    opacity: 1;
+    transform: none;
+  }
 }
