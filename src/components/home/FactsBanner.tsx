@@ -1,5 +1,5 @@
 import { Car, Users, CalendarDays, Gauge } from "lucide-react";
-import logoCar from "@/assets/icons/AlMashariq-logo.svg";
+import logoDark from "@/assets/icons/AlMashariq-logo-dark.svg";
 import { Reveal } from "@/components/motion/Reveal";
 
 const facts = [
@@ -15,9 +15,9 @@ export function FactsBanner() {
       <Reveal>
         <div className="hex-mesh relative overflow-hidden rounded-2xl bg-brand px-6 py-12 text-white sm:px-12 sm:py-16">
           <img
-            src={logoCar}
+            src={logoDark}
             alt=""
-            className="pointer-events-none absolute bottom-[-20%] left-1/2 hidden w-[520px] -translate-x-1/2 opacity-20 brightness-0 invert lg:block"
+            className="pointer-events-none absolute bottom-[-20%] left-1/2 hidden w-[520px] -translate-x-1/2 opacity-20 lg:block"
           />
           <div className="relative z-10 flex flex-col items-center text-center">
             <h2 className="text-section text-white">Facts In Numbers</h2>

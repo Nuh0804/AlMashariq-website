@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router";
 import { Menu, Moon, Sun } from "lucide-react";
-import logoCar from "@/assets/icons/AlMashariq-logo.svg";
 import phoneIcon from "@/assets/icons/phone.svg";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -17,7 +17,7 @@ import { useTheme } from "@/hooks/theme-context";
 function Logo() {
   return (
     <NavLink to="/" className="flex w-[180px] shrink-0 items-center gap-3">
-      <img src={logoCar} alt="" width={48} height={48} className="size-12" />
+      <BrandMark className="size-12" />
       <span className="font-inter text-base font-bold text-foreground">
         AlMashariq
       </span>
