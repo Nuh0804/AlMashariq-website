@@ -19,6 +19,10 @@ export type Car = {
   ac: boolean;
   seats: number;
   doors: number;
+  electric?: boolean;
+  luxury?: boolean;
+  instantBook?: boolean;
+  rangeKm: number;
 };
 
 export const cars: Car[] = [
@@ -33,6 +37,8 @@ export const cars: Car[] = [
     ac: true,
     seats: 5,
     doors: 4,
+    instantBook: true,
+    rangeKm: 680,
   },
   {
     id: "mercedes-sport",
@@ -45,6 +51,8 @@ export const cars: Car[] = [
     ac: true,
     seats: 2,
     doors: 2,
+    luxury: true,
+    rangeKm: 540,
   },
   {
     id: "mercedes-sedan-premium",
@@ -57,6 +65,9 @@ export const cars: Car[] = [
     ac: true,
     seats: 5,
     doors: 4,
+    luxury: true,
+    instantBook: true,
+    rangeKm: 640,
   },
   {
     id: "porsche-suv",
@@ -69,6 +80,8 @@ export const cars: Car[] = [
     ac: true,
     seats: 5,
     doors: 4,
+    instantBook: true,
+    rangeKm: 610,
   },
   {
     id: "toyota-sedan",
@@ -76,11 +89,14 @@ export const cars: Car[] = [
     type: "Sedan",
     price: 35,
     image: toyotaSedan,
-    transmission: "Manual",
-    fuel: "PB 95",
+    transmission: "Automat",
+    fuel: "Electric",
     ac: true,
     seats: 5,
     doors: 4,
+    electric: true,
+    instantBook: true,
+    rangeKm: 380,
   },
   {
     id: "porsche-suv-turbo",
@@ -89,10 +105,14 @@ export const cars: Car[] = [
     price: 50,
     image: porscheSuv2,
     transmission: "Automat",
-    fuel: "PB 95",
+    fuel: "Electric",
     ac: true,
     seats: 5,
     doors: 4,
+    electric: true,
+    luxury: true,
+    instantBook: true,
+    rangeKm: 450,
   },
   {
     id: "bmw-coupe",
@@ -105,6 +125,8 @@ export const cars: Car[] = [
     ac: true,
     seats: 4,
     doors: 2,
+    instantBook: true,
+    rangeKm: 520,
   },
   {
     id: "toyota-pickup",
@@ -117,6 +139,8 @@ export const cars: Car[] = [
     ac: true,
     seats: 5,
     doors: 4,
+    instantBook: true,
+    rangeKm: 700,
   },
   {
     id: "mercedes-minivan",
@@ -129,6 +153,8 @@ export const cars: Car[] = [
     ac: true,
     seats: 7,
     doors: 4,
+    instantBook: true,
+    rangeKm: 590,
   },
   {
     id: "toyota-sport",
@@ -141,6 +167,8 @@ export const cars: Car[] = [
     ac: true,
     seats: 2,
     doors: 2,
+    luxury: true,
+    rangeKm: 480,
   },
   {
     id: "maybach-sedan",
@@ -153,6 +181,9 @@ export const cars: Car[] = [
     ac: true,
     seats: 5,
     doors: 4,
+    luxury: true,
+    instantBook: true,
+    rangeKm: 560,
   },
 ];
 

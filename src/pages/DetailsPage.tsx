@@ -51,7 +51,7 @@ export function DetailsPage() {
     },
     {
       label: "Distance",
-      value: "500",
+      value: `${String(car.rangeKm)} km`,
       icon: <Gauge className="size-6" strokeWidth={1.5} />,
     },
   ];
@@ -69,9 +69,9 @@ export function DetailsPage() {
             <span className="text-[40px] font-semibold text-brand">
               ${car.price}
             </span>
-            <span className="text-base text-black/60">/ day</span>
+            <span className="text-base text-muted-foreground">/ day</span>
           </p>
-          <div className="mt-5">
+          <div className="group mt-5">
             <CarImage src={car.image} alt={`${car.name} ${car.type}`} />
           </div>
           <div className="mt-5 flex gap-6 overflow-x-auto">
@@ -94,14 +94,14 @@ export function DetailsPage() {
             {specs.map((spec) => (
               <div
                 key={spec.label}
-                className="flex h-[148px] flex-col justify-center gap-5 rounded-xl bg-white p-6"
+                className="flex h-[148px] flex-col justify-center gap-5 rounded-xl bg-card p-6"
               >
                 {spec.icon}
                 <div>
                   <p className="text-base font-semibold capitalize">
                     {spec.label}
                   </p>
-                  <p className="mt-2 text-base text-black/60">{spec.value}</p>
+                  <p className="mt-2 text-base text-muted-foreground">{spec.value}</p>
                 </div>
               </div>
             ))}
@@ -126,7 +126,7 @@ export function DetailsPage() {
                 {column.map((item) => (
                   <li
                     key={`${String(columnIndex)}-${item}`}
-                    className="flex items-center gap-4 text-base capitalize text-black/60"
+                    className="flex items-center gap-4 text-base capitalize text-muted-foreground"
                   >
                     <img
                       src={checkCircle}

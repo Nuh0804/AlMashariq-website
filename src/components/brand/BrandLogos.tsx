@@ -4,6 +4,7 @@ import ford from "@/assets/logos/ford.svg";
 import jeep from "@/assets/logos/jeep.svg";
 import mercedes from "@/assets/logos/mercedes.svg";
 import toyota from "@/assets/logos/toyota.svg";
+import { Reveal } from "@/components/motion/Reveal";
 
 const logos = [
   { src: toyota, alt: "Toyota", className: "h-[54px] w-[82px]" },
@@ -16,17 +17,19 @@ const logos = [
 
 export function BrandLogos() {
   return (
-    <section className="page-wrap py-[60px]">
-      <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 rounded-[40px] bg-white px-6 py-10 sm:justify-between sm:px-10 sm:py-[60px]">
+    <section className="page-wrap py-16 lg:py-24">
+      <Reveal>
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 rounded-[40px] bg-card px-6 py-10 sm:justify-between sm:px-10 sm:py-[60px]">
         {logos.map((logo) => (
           <img
             key={logo.alt}
             src={logo.src}
             alt={logo.alt}
-            className={`object-contain object-center ${logo.className}`}
+            className={`object-contain object-center dark:brightness-0 dark:invert ${logo.className}`}
           />
         ))}
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 }

@@ -22,24 +22,19 @@ export function BookingForm({
   const isBrand = variant === "brand";
 
   const fieldClass = isBrand
-    ? "h-[38px] w-full rounded-xl border-0 bg-brand-field px-4 text-base font-normal text-white shadow-none placeholder:text-white data-placeholder:text-white [&_svg]:text-white"
-    : "h-[38px] w-full rounded-xl border-0 bg-[#fafafa] px-4 text-base font-normal text-black shadow-none placeholder:text-black/50 data-placeholder:text-black/50";
+    ? "booking-field h-[38px] w-full rounded-xl border border-white/15 bg-brand-field px-4 text-base font-normal text-white shadow-none placeholder:text-white data-placeholder:text-white focus-visible:ring-0 [&_svg]:text-white"
+    : "booking-field h-[38px] w-full rounded-xl border border-white/20 bg-white/75 px-4 text-base font-normal text-foreground shadow-none placeholder:text-foreground/50 data-placeholder:text-foreground/50 focus-visible:ring-0 dark:bg-white/10";
 
   return (
     <form
       className={cn(
         "flex w-full max-w-[416px] flex-col items-center gap-10 rounded-[20px] p-10",
-        isBrand ? "bg-brand" : "bg-white",
+        isBrand ? "bg-brand shadow-[0_24px_60px_rgb(0_0_0/28%)]" : "glass-card",
         className,
       )}
       onSubmit={(event) => event.preventDefault()}
     >
-      <h2
-        className={cn(
-          "text-center text-[24px] font-semibold sm:text-[28px]",
-          isBrand ? "text-white" : "text-black",
-        )}
-      >
+      <h2 className="text-center font-heading text-[24px] font-bold text-white sm:text-[28px]">
         {title}
       </h2>
       <div className="flex w-full flex-col gap-5">
